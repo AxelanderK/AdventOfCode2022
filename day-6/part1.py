@@ -6,8 +6,7 @@ def isUnique(input, chars):
 entry = open(0).read()
 chars = 4
 for index, c in enumerate(entry):
-    if index >= chars:
-        x = entry[(index-chars):index]
-        if isUnique(x, chars):
-            print(index)
-            break
+    x = entry[index:index+chars]
+    if isUnique(x, chars):
+        print(index + chars)
+        break
