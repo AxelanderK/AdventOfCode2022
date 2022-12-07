@@ -20,10 +20,6 @@ def getStacks(lines):
             k = re.search(r'[A-Z]', chunk)
             if k:
                 stack[index].append(k.group())
-
-    # for o in range(0, cols):
-    #     stack[o].reverse()
-
     return stack
 
 lines = open(0).read().split('\n')
@@ -43,8 +39,6 @@ for movestr in movesstr:
     toStack = stacks[t-1]
     
     toMove = fromStack[:amount]
-    # toMove.reverse()
-    # print(toMove)
     stacks[f-1] = fromStack[amount:]
     stacks[t-1] = toMove + toStack
 
